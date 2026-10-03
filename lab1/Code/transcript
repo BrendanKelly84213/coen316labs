@@ -1,0 +1,241 @@
+# //  ModelSim SE-64 6.6g May 23 2012 Linux 5.14.0-687.36.1.el9_8.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile alu.vhd 
+# 
+#  
+vsim work.alu
+# vsim work.alu 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.numeric_std(body)
+# Loading work.alu(behavioural)#1
+add wave -r /*
+force x "1"
+# Value length (1) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: 1.
+# 
+force x "0000000000000000000000000000011"
+# Value length (31) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: 0000000000000000000000000000011.
+# 
+force x "00000000000000000000000000000011"
+force y "00000000000000000000000000000010"
+force add_sub '1'
+force logic "00"
+# ** Error: (vish-4008) Object 'logic' not found.
+# 
+force func "00"
+force logic_func "00"
+force func "10"
+run 2
+ru n2
+# ambiguous command name "ru": run runIntHandler runStatus
+run 2
+force func "00"
+run 2
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+vsim work.alu
+# vsim work.alu 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.numeric_std(body)
+# Loading work.alu(behavioural)#1
+force x "0000000000000000000000000000011"
+# Value length (31) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: 0000000000000000000000000000011.
+# 
+force x "00000000000000000000000000000011"
+force y "00000000000000000000000000000010"
+force func "10"
+force logic_func "00"
+force add_sub '1'
+run 2
+add wave -r /*
+run 2
+run 2
+force add_sub '0'
+run 2
+force func "00"
+run 2
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+vsim alu.vhd
+# OpenFile alu.vhd 
+vsim work.alu
+# vsim work.alu 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.numeric_std(body)
+# Loading work.alu(behavioural)#1
+force y "00000000000000000000000000000010"
+force x "00000000000000000000000000000011"
+force func "10"
+force y "00000000000000000000000000000010"
+run 2
+add wave -r /*
+run 2
+force add_sub '1'
+run 2
+force add_sub '0'
+run 2
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+# ** Error: alu.vhd(34): Cannot resolve indexed name as type ieee.std_logic_1164.std_logic_vector.
+# ** Error: alu.vhd(60): VHDL Compiler exiting
+# /nfs/sw_cmc/x86_64.EL7/tools/mentor.2011/modelsim_6.6g/modeltech/linux_x86_64/vcom failed.
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+# ** Error: alu.vhd(34): Cannot resolve indexed name as type ieee.std_logic_1164.std_logic_vector.
+# ** Error: alu.vhd(60): VHDL Compiler exiting
+# /nfs/sw_cmc/x86_64.EL7/tools/mentor.2011/modelsim_6.6g/modeltech/linux_x86_64/vcom failed.
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+force func "01"
+run 2
+vsim work.alu
+# vsim work.alu 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.numeric_std(body)
+# Loading work.alu(behavioural)#1
+force x "00000000000000000000000000000011"
+force x "00000000000000000000000000000011"
+force func "01"
+run 2
+add wave -r /*
+force y "00000000000000000000000000000011"
+run 2
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+vsim work.alu
+# vsim work.alu 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.numeric_std(body)
+# Loading work.alu(behavioural)#1
+add wave -r /*
+force y "00000000000000000000000000000011"
+force x "00000000000000000000000000000011"
+force func "11"
+force logic_func "00"
+run 2
+force logic_func "01"
+run 2
+force logic_func "10"
+run 2
+vcom alu.vhd
+# Model Technology ModelSim SE-64 vcom 6.6g Compiler 2012.05 May 23 2012
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_signed
+# -- Loading package numeric_std
+# -- Compiling entity alu
+# -- Compiling architecture behavioural of alu
+vsim work.alu
+# vsim work.alu 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.numeric_std(body)
+# Loading work.alu(behavioural)#1
+add wave -r /*
+force y "00000000000000000000000000000011"
+force x "0000000000000000000000000000001"
+# Value length (31) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: 0000000000000000000000000000001.
+# 
+force x "00000000000000000000000000000010"
+force func "11"
+force logic_func "01"
+force logic_func "00"
+run 2
+force logic_func "01"
+ru n2
+# ambiguous command name "ru": run runIntHandler runStatus
+run 2
+force logic_func "10"
+run 2
+force logic_func "11"
+run 2
