@@ -1,0 +1,351 @@
+
+*** Running vivado
+    with args -log next_address_board_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source next_address_board_wrapper.tcl
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 10 14:34:47 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source next_address_board_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1838.406 ; gain = 205.055 ; free physical = 10037 ; free virtual = 22345
+Command: synth_design -top next_address_board_wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 41182
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 2438.297 ; gain = 439.742 ; free physical = 9193 ; free virtual = 21530
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'next_address_board_wrapper' [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/sources_1/imports/Code/next_address_board_wrapper.vhd:27]
+INFO: [Synth 8-3491] module 'next_address' declared at '/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/sources_1/imports/Code/next_address.vhd:6' bound to instance 'uut' of component 'next_address' [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/sources_1/imports/Code/next_address_board_wrapper.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'next_address' [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/sources_1/imports/Code/next_address.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'next_address' (0#1) [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/sources_1/imports/Code/next_address.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'next_address_board_wrapper' (0#1) [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/sources_1/imports/Code/next_address_board_wrapper.vhd:27]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2511.266 ; gain = 512.711 ; free physical = 9111 ; free virtual = 21450
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2529.078 ; gain = 530.523 ; free physical = 9098 ; free virtual = 21437
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2529.078 ; gain = 530.523 ; free physical = 9098 ; free virtual = 21437
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2529.078 ; gain = 0.000 ; free physical = 9098 ; free virtual = 21437
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:8]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK100MHZ]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:8]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[4]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[5]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[6]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[7]'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxn3'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:144]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:144]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxp3'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:145]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:145]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxn10'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:146]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:146]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxp10'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:147]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:147]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxn2'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:148]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:148]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxp2'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:149]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:149]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxn11'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:150]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:150]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxp11'. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:151]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc:151]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.srcs/constrs_1/imports/Code/Nexys-A7-100T-next_addr.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.816 ; gain = 0.000 ; free physical = 9080 ; free virtual = 21434
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.852 ; gain = 0.000 ; free physical = 9079 ; free virtual = 21434
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 2616.852 ; gain = 618.297 ; free physical = 9077 ; free virtual = 21433
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 2624.820 ; gain = 626.266 ; free physical = 9077 ; free virtual = 21433
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 2624.820 ; gain = 626.266 ; free physical = 9077 ; free virtual = 21433
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 2624.820 ; gain = 626.266 ; free physical = 9075 ; free virtual = 21431
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 3     
+	   4 Input   32 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 2624.820 ; gain = 626.266 ; free physical = 9072 ; free virtual = 21434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 2697.820 ; gain = 699.266 ; free physical = 8984 ; free virtual = 21353
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 2697.820 ; gain = 699.266 ; free physical = 8984 ; free virtual = 21353
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 2707.836 ; gain = 709.281 ; free physical = 8978 ; free virtual = 21347
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.648 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.648 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.648 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.648 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.648 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.648 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     6|
+|2     |LUT2   |    20|
+|3     |LUT4   |     2|
+|4     |LUT6   |     8|
+|5     |IBUF   |    14|
+|6     |OBUF   |     3|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.648 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 2882.648 ; gain = 796.320 ; free physical = 8809 ; free virtual = 21178
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2882.656 ; gain = 884.094 ; free physical = 8809 ; free virtual = 21178
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2882.656 ; gain = 0.000 ; free physical = 8809 ; free virtual = 21178
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2882.656 ; gain = 0.000 ; free physical = 8973 ; free virtual = 21344
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 2595357c
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 45 Warnings, 44 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:50 . Memory (MB): peak = 2882.684 ; gain = 1044.277 ; free physical = 8972 ; free virtual = 21344
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1906.861; main = 1881.128; forked = 287.258
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4262.750; main = 2882.652; forked = 1588.926
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2906.660 ; gain = 0.000 ; free physical = 8972 ; free virtual = 21343
+INFO: [Common 17-1381] The checkpoint '/nfs/home/k/k_brend/COEN316/lab3/Code/coen316_lab3_vivado/coen316_lab3_vivado.runs/synth_1/next_address_board_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file next_address_board_wrapper_utilization_synth.rpt -pb next_address_board_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 10 14:35:59 2026...
