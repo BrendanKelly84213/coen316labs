@@ -18,7 +18,7 @@ force pc X"1"
 force target_address X"04"
 force branch_type X"1"
 # Expecting to add 4 to the pc, next_address = 6 
-# next_pc = pc + + 1 + 0x04 = 6
+# next_pc = pc + 1 + 0x04 = 6
 run 2
 
 force pc X"6"
@@ -32,7 +32,7 @@ force branch_type X"2"
 force rs X"1"
 force pc X"4"
 
-# next_pc = pc + 1 + (-2) = 0x05 + 1 - 2 = 0x04
+# next_pc = pc + 1 + (-2) = 0x04 + 1 - 2 = 0x03
 run 2
 
 # testing bltz
@@ -40,7 +40,7 @@ force pc X"3"
 force branch_type X"3"
 force rs X"ffffffff"
 run 2
-# next_pc = pc + 1 + (-2) = 0x04 + 1  - 2 = 0x03
+# next_pc = pc + 1 + (-2) = 0x03 + 1 - 2 = 0x02
 
 # testing jump
 force pc_sel X"1"
