@@ -22,6 +22,10 @@ entity datapath is
 
          alu_overflow : out std_logic;
          alu_zero     : out std_logic
+
+         rs_out : out std_logic_vector(3 downto 0);
+         rt_out : out std_logic_vector(3 downto 0);
+         pc_out : out std_logic_vector(3 downto 0);
      );
 end datapath;
 
@@ -206,6 +210,10 @@ begin
 
     datacache_out <= datacache(to_integer(unsigned(alu_out(4 downto 0))));
 
+    -- datapath outputs
+    rs_out <= rfile_out_a(3 downto 0);
+    rt_out <= rfile_out_b(3 downto 0);
+    pc_out <= pc(3 downto 0);
 
 end behavioural;
 
