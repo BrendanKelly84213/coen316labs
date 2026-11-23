@@ -58,7 +58,7 @@ begin
         else '0';
 
     -- logic
-    process (logic_o, logic_func) is
+    process (x, y, logic_o, logic_func) is
     begin
         case logic_func is
             when "00" => logic_o <= x and y;
