@@ -4,21 +4,24 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity datapath is
-    port(clk : in std_logic;
-         reset : in std_logic;
-         pc_sel : in std_logic_vector(1 downto 0);
-         reg_dst : in std_logic;
-         reg_write : in std_logic;
-         alu_src : in std_logic; -- AluOp in the textbook diagram
+    port(clk         : in std_logic;
+         reset       : in std_logic;
+         pc_sel      : in std_logic_vector(1 downto 0);
+         reg_dst     : in std_logic;
+         reg_write   : in std_logic;
+         alu_src     : in std_logic; -- AluOp in the textbook diagram
          branch_type : in std_logic_vector(1 downto 0);
-         func : in std_logic_vector(1 downto 0); -- control unit output for the alu
-         logic_func : in std_logic_vector(1 downto 0);
-         add_sub : in std_logic;
-         data_write : in std_logic;
-         reg_in_src : in std_logic;
+         func        : in std_logic_vector(1 downto 0); -- control unit output for the alu
+         logic_func  : in std_logic_vector(1 downto 0);
+         add_sub     : in std_logic;
+         data_write  : in std_logic;
+         reg_in_src  : in std_logic;
 
-         func_out : out std_logic_vector(5 downto 0);
-         opcode : out std_logic_vector(5 downto 0)
+         func_out    : out std_logic_vector(5 downto 0);
+         opcode      : out std_logic_vector(5 downto 0);
+
+         alu_overflow : out std_logic;
+         alu_zero     : out std_logic
      );
 end datapath;
 
@@ -74,8 +77,6 @@ architecture behavioural of datapath is
     signal write_data : std_logic_vector(31 downto 0) := (others => '0');
 
     signal alu_out : std_logic_vector(31 downto 0);
-    signal alu_overflow : std_logic;
-    signal alu_zero : std_logic;
     
     signal sgn_extend_out : std_logic_vector(31 downto 0);
 
