@@ -1,0 +1,93 @@
+flowchart LR
+    %% Lab 4 datapath, taken from lab4/Code/datapath.vhd and its component port maps.
+    %% The control-unit logic is not instantiated in datapath.vhd; control pins enter from outside.
+
+    subgraph FETCH["Instruction fetch and decode"]
+        PC["PC register<br/>pc[31:0]<br/>async reset, rising-edge update"]
+        ICACHE["Instruction cache<br/>combinational ROM<br/>indexed by pc[4:0]"]
+        FIELDS["Instruction fields from icache[31:0]<br/>opcode = [31:26]<br/>rs = [25:21] · rt = [20:16] · rd = [15:11]<br/>imm = [15:0] · target_address = [25:0]<br/>func_out = [5:0]"]
+
+        PC -->|pc[4:0]| ICACHE
+        ICACHE -->|icache[31:0]| FIELDS
+    end
+
+    subgraph EXECUTE["Register, execute, and write-back datapath"]
+        REGDST{{"Destination MUX<br/>reg_dst: 0=rt, 1=rd"}}
+        RF["Register file U1<br/>32 × 32<br/>2 asynchronous read ports<br/>1 clocked write port"]
+        SIGN["Immediate extension<br/>func=00: imm shifted left 16<br/>func=01 or 10: sign extend<br/>otherwise: zero extend"]
+        ALUSRC{{"ALU operand MUX<br/>alu_src: 0=rfile_out_b, 1=sgn_extend_out"}}
+        ALU["ALU U2<br/>32-bit x, y<br/>output alu_out<br/>overflow, zero"]
+        REGINSRC{{"Register write-data MUX<br/>reg_in_src: 0=datacache_out, 1=alu_out"}}
+
+        FIELDS -->|rt[4:0]| REGDST
+        FIELDS -->|rd[4:0]| REGDST
+        REGDST -->|writereg[4:0] / write_address| RF
+
+        FIELDS -->|rs[4:0] / read_a| RF
+        FIELDS -->|rt[4:0] / read_b| RF
+
+        FIELDS -->|imm[15:0]| SIGN
+        SIGN -->|sgn_extend_out[31:0]| ALUSRC
+        RF -->|rfile_out_b[31:0]| ALUSRC
+        ALUSRC -->|alu_y[31:0]| ALU
+        RF -->|rfile_out_a[31:0] / x| ALU
+
+        ALU -->|alu_out[31:0]| REGINSRC
+        REGINSRC -->|write_data[31:0] / din| RF
+    end
+
+    subgraph MEMORY["Data cache"]
+        DCACHE["datacache array<br/>32 words × 32 bits<br/>combinational read<br/>clocked write when data_write=1"]
+    end
+
+    subgraph NEXTPC["Next-address component U3"]
+        NEXT["next_address<br/>inputs: pc, target_address[25:0],<br/>branch_type[1:0], pc_sel[1:0]<br/>outputs: next_pc[31:0]<br/><br/>pc_sel: 00=branch, 01=jump,<br/>10=rs input, others=hold pc"]
+    end
+
+    subgraph TOPPORTS["Datapath top-level ports"]
+        CTRL["External control inputs<br/>reg_dst · reg_write · alu_src<br/>func[1:0] · logic_func[1:0] · add_sub<br/>data_write · reg_in_src<br/>pc_sel[1:0] · branch_type[1:0]"]
+        CLKRESET["clk · reset"]
+        OUTPUTS["Datapath outputs<br/>opcode[5:0] · func_out[5:0]<br/>alu_overflow · alu_zero<br/>rs_out = rfile_out_a[3:0]<br/>rt_out = rfile_out_b[3:0]<br/>pc_out = pc[3:0]"]
+    end
+
+    %% Data-cache connections: the ALU result supplies the word index for both read and write.
+    ALU -->|alu_out[4:0] / array index| DCACHE
+    RF -->|rfile_out_b[31:0] / store data| DCACHE
+    DCACHE -->|datacache_out[31:0]| REGINSRC
+
+    %% Exact U3 port map in datapath.vhd:
+    %% rt => rfile_out_a; rs => rfile_out_b.
+    RF -->|rfile_out_a[31:0] to rt port| NEXT
+    RF -->|rfile_out_b[31:0] to rs port| NEXT
+    PC -->|pc[31:0]| NEXT
+    FIELDS -->|target_address[25:0]| NEXT
+    NEXT -->|next_pc[31:0]| PC
+
+    %% External control and timing connections.
+    CTRL -->|reg_dst| REGDST
+    CTRL -->|reg_write| RF
+    CTRL -->|alu_src| ALUSRC
+    CTRL -->|func[1:0]| SIGN
+    CTRL -->|func[1:0], logic_func[1:0], add_sub| ALU
+    CTRL -->|reg_in_src| REGINSRC
+    CTRL -->|data_write| DCACHE
+    CTRL -->|pc_sel[1:0], branch_type[1:0]| NEXT
+
+    CLKRESET -->|clk, reset| PC
+    CLKRESET -->|clk, reset| RF
+    CLKRESET -->|clk, reset| DCACHE
+
+    %% Datapath output connections.
+    FIELDS -->|opcode[5:0], func_out[5:0]| OUTPUTS
+    ALU -->|overflow, zero| OUTPUTS
+    RF -->|rfile_out_a[3:0], rfile_out_b[3:0]| OUTPUTS
+    PC -->|pc[3:0]| OUTPUTS
+
+    classDef storage fill:#eaf2ff,stroke:#315b8a,stroke-width:1.5px,color:#172b4d;
+    classDef logic fill:#f5f5f5,stroke:#555,stroke-width:1.3px,color:#222;
+    classDef mux fill:#fff2cc,stroke:#9a741c,stroke-width:1.5px,color:#332600;
+    classDef ports fill:#e8f5e9,stroke:#38734a,stroke-width:1.3px,color:#173b22;
+    class PC,RF,DCACHE,ICACHE storage;
+    class FIELDS,SIGN,ALU,NEXT logic;
+    class REGDST,ALUSRC,REGINSRC mux;
+    class CTRL,CLKRESET,OUTPUTS ports;
