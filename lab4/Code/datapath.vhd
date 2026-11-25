@@ -188,8 +188,8 @@ begin
     end process;
 
     U3: next_address
-    port map (rt             => rfile_out_a, 
-              rs             => rfile_out_b,
+    port map (rt             => rfile_out_b, 
+              rs             => rfile_out_a,
               pc             => pc,
               target_address => target_address,
               branch_type    => branch_type,
